@@ -6,8 +6,8 @@ public class Libro {
 	private String autore;
 	private String editore;
 	
-	public Libro(String titolo, int numeroPagine, String autore, String editore){
-      
+	public Libro(String titolo, int numeroPagine, String autore, String editore) throws Exception{
+		
     	setTitolo(titolo);
     	setNumeroPagine(numeroPagine);
     	setAutore(autore);
@@ -18,7 +18,10 @@ public class Libro {
 		return titolo;
 	}
 
-	public void setTitolo(String titolo) {
+	public void setTitolo(String titolo) throws Exception {
+		if (titolo.isEmpty()) {
+            throw new Exception("Titolo vuoto.");
+        }
 		this.titolo = titolo;
 	}
 
@@ -26,7 +29,10 @@ public class Libro {
 		return numeroPagine;
 	}
 
-	public void setNumeroPagine(int numeroPagine) {
+	public void setNumeroPagine(int numeroPagine) throws Exception {
+        if (numeroPagine <= 0) {
+            throw new Exception("Numero di pagine non valido.");
+        }
 		this.numeroPagine = numeroPagine;
 	}
 
@@ -34,7 +40,10 @@ public class Libro {
 		return autore;
 	}
 
-	public void setAutore(String autore) {
+	public void setAutore(String autore) throws Exception {
+		if (autore.isEmpty()) {
+            throw new Exception("Autore vuoto.");
+        }
 		this.autore = autore;
 	}
 
