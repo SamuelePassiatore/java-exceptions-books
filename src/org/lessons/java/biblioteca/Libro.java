@@ -57,8 +57,8 @@ public class Libro {
 	
 	@Override
     public String toString() {
-        return "Titolo: " + titolo + ", Numero Pagine: " + numeroPagine + ", Autore: " + autore +
-                ", Editore: " + editore;
+        return "Titolo: " + getTitolo() + ", Numero Pagine: " + getNumeroPagine() + ", Autore: " + getAutore() +
+                ", Editore: " + getEditore();
     }
 }
 
